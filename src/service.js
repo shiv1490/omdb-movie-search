@@ -4,7 +4,7 @@ export async function getMovieList(searchText) {
   const searchQuery = searchText ? searchText.trim() : 'movie';
   let res = [];
   try {
-    res = await axios.get(`http://www.omdbapi.com/?apikey=320f6ab2&s=${searchQuery}`);
+    res = await axios.get(`https://www.omdbapi.com/?apikey=320f6ab2&s=${searchQuery}`);
     return {
       response: !res.data.Error ? res.data.Search : [],
       errorDetails: {
@@ -26,7 +26,7 @@ export async function getMovieList(searchText) {
 export async function getMovieDetails(movieId) {
   let res = null;
   try {
-    res = await axios.get(`http://www.omdbapi.com/?apikey=320f6ab2&plot=full&i=${movieId}`);
+    res = await axios.get(`https://www.omdbapi.com/?apikey=320f6ab2&plot=full&i=${movieId}`);
     return {
       response: res.data,
       error: false,
