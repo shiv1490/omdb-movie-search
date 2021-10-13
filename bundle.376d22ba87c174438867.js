@@ -20203,8 +20203,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/CardMedia/CardMedia.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/CardContent/CardContent.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/CircularProgress/CircularProgress.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Dialog/Dialog.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Dialog/Dialog.js");
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service */ "./src/service.js");
@@ -20242,20 +20241,15 @@ var MovieSearch = function MovieSearch() {
       modalOpen = _useState4[0],
       setModalOpen = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      isLoading = _useState6[0],
-      setIsLoading = _useState6[1];
+      activeMovieId = _useState6[0],
+      setActiveMovieId = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState8 = _slicedToArray(_useState7, 2),
-      activeMovieId = _useState8[0],
-      setActiveMovieId = _useState8[1];
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState10 = _slicedToArray(_useState9, 2),
-      isError = _useState10[0],
-      setIsError = _useState10[1];
+      isError = _useState8[0],
+      setIsError = _useState8[1];
 
   var apiList = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(searchText) {
@@ -20265,19 +20259,17 @@ var MovieSearch = function MovieSearch() {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              setIsLoading(true);
-              _context.next = 3;
+              _context.next = 2;
               return (0,_service__WEBPACK_IMPORTED_MODULE_2__.getMovieList)(searchText);
 
-            case 3:
+            case 2:
               _yield$getMovieList = _context.sent;
               response = _yield$getMovieList.response;
               errorDetails = _yield$getMovieList.errorDetails;
               setMovieList(response);
               setIsError(errorDetails);
-              setIsLoading(false);
 
-            case 9:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -20367,14 +20359,7 @@ var MovieSearch = function MovieSearch() {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__["default"], {
     variant: "h4"
-  }, isError.errorResponse)), isLoading && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    sx: {
-      flexDirection: 'row',
-      display: 'flex',
-      justifyContent: 'center',
-      mt: 3
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  }, isError.errorResponse))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__["default"], {
     open: modalOpen,
     onClose: function onClose() {
       return setModalOpen(false);
@@ -66309,4 +66294,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPOR
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.ead64f2ba499685a69d8.js.map
+//# sourceMappingURL=bundle.376d22ba87c174438867.js.map
