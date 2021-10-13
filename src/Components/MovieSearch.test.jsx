@@ -6,7 +6,7 @@ import axios from 'axios';
 import MovieSearch from './MovieSearch';
 import * as service from '../service';
 
-describe('Getflix test suite', () => {
+describe('Movie Search test suite', () => {
   it('should render correct elements when call succeed ', async () => {
     axios.get = jest.fn(() => Promise.resolve({
       data: {
