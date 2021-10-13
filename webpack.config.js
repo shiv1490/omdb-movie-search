@@ -6,7 +6,7 @@ const { EnvironmentPlugin } = require('webpack');
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.[fullhash].js',
   },
   mode: process.env.NODE_ENV || 'development',
