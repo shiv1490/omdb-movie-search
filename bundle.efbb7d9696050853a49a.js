@@ -20123,7 +20123,7 @@ function _getMovieList() {
             res = [];
             _context.prev = 2;
             _context.next = 5;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://www.omdbapi.com/?apikey=320f6ab2&s=".concat(searchQuery));
+            return axios__WEBPACK_IMPORTED_MODULE_0___default().get("https://www.omdbapi.com/?apikey=320f6ab2&s=".concat(searchQuery));
 
           case 5:
             res = _context.sent;
@@ -20170,7 +20170,7 @@ function _getMovieDetails() {
             res = null;
             _context2.prev = 1;
             _context2.next = 4;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://www.omdbapi.com/?apikey=320f6ab2&plot=full&i=".concat(movieId));
+            return axios__WEBPACK_IMPORTED_MODULE_0___default().get("https://www.omdbapi.com/?apikey=320f6ab2&plot=full&i=".concat(movieId));
 
           case 4:
             res = _context2.sent;
@@ -66005,4 +66005,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPOR
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.fe3d033caa012a2d5c65.js.map
+//# sourceMappingURL=bundle.efbb7d9696050853a49a.js.map
