@@ -13,6 +13,7 @@ import {
   Dialog,
   useMediaQuery,
   useTheme,
+  CircularProgress,
 } from '@material-ui/core';
 import debounce from 'lodash.debounce';
 import { getMovieList } from '../service';
@@ -21,13 +22,16 @@ import MovieDetails from './MovieDetails';
 const MovieSearch = () => {
   const [movieList, setMovieList] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [activeMovieId, setActiveMovieId] = useState('');
   const [isError, setIsError] = useState(false);
 
   const apiList = async (searchText) => {
+    setIsLoading(true);
     const { response, errorDetails } = await getMovieList(searchText);
     setMovieList(response);
     setIsError(errorDetails);
+    setIsLoading(false);
   };
 
   const delayedSearchHandler = useCallback(debounce((searchText) => apiList(searchText), 500), []);
@@ -98,6 +102,14 @@ const MovieSearch = () => {
           </Typography>
         </Box>
 
+        )}
+        {isLoading && (
+        <Box sx={{
+          flexDirection: 'row', display: 'flex', justifyContent: 'center', mt: 3,
+        }}
+        >
+          <CircularProgress />
+        </Box>
         )}
       </Box>
       <Dialog

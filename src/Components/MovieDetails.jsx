@@ -9,6 +9,7 @@ import {
   Button,
   Chip,
   Grid,
+  CircularProgress,
 } from '@material-ui/core';
 import { getMovieDetails } from '../service';
 import movieDetailsStyles from '../styles';
@@ -16,12 +17,14 @@ import movieDetailsStyles from '../styles';
 const MovieDetails = ({ movieId, setModalOpen }) => {
   const [movieDetails, setMovieDetails] = useState();
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const classes = movieDetailsStyles();
   useEffect(() => {
     const apiList = async () => {
       const { response, error } = await getMovieDetails(movieId);
       setMovieDetails(response || []);
       setIsError(error);
+      setIsLoading(false);
     };
     apiList();
   }, [movieId]);
@@ -63,13 +66,27 @@ const MovieDetails = ({ movieId, setModalOpen }) => {
             </Grid>
           </>
           )}
-          {isError && (
+        </Grid>
+        {isError && (
+        <Box sx={{
+          flexDirection: 'row', display: 'flex', justifyContent: 'center', mt: 3,
+        }}
+        >
           <Typography variant="body1">
             Some Error occurred while fetching Details for movie
           </Typography>
-          )}
-          <Box />
-        </Grid>
+
+        </Box>
+        )}
+        {isLoading && (
+          <Box sx={{
+            flexDirection: 'row', display: 'flex', justifyContent: 'center', mt: 3,
+          }}
+          >
+            <CircularProgress />
+          </Box>
+        )}
+        <Box />
         <Box />
 
       </DialogContent>
