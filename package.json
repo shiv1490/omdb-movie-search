@@ -5,7 +5,7 @@
   "main": "src/index.jsx",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "test": "jest src/ --passWithNoTests --coverage",
+    "test": "jest src/ --passWithNoTests",
     "start": "webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
     "lint": "npx eslint . --fix"
