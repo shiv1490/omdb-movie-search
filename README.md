@@ -30,4 +30,4 @@ npm run test
 
 ```
 
-## Application is hoted at github pages via (https://shiv1490.github.io/omdb-movie-search/)
+## Application is hosted at github pages via (https://shiv1490.github.io/omdb-movie-search/)
